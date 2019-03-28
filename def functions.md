@@ -97,5 +97,40 @@ print(nome)
 
 
 ```python
+def ver_aliquota(salario):
+    if salario < 1903.98:
+        aliquota = 0
+    elif 1903.99 < salario < 2826.65:
+        aliquota = 0.075
+    elif 2826.66 < salario < 3751.05:
+        aliquota = 0.15
+    elif 3751.06 < salario < 4664.68:
+        aliquota = 0.225
+    else:
+        aliquota = 0.275
+
+    return aliquota
+
+def print_alinhado(a, b, c, d):
+    print('{:<15} {:<10} {:<10} {:<6}'.format(a, b, c, d))
+
+
+nome = input('Nome: ')
+salario = float(input('Salario: '))
+aliquota = ver_aliquota(salario)
+ir = salario * aliquota
+
+print_alinhado('Nome', 'Salario', 'Aliquota', 'IR')
+print_alinhado(nome, salario, aliquota, ir)
+```
+
+    Nome: Pessoa
+    Salario: 1980
+    Nome            Salario    Aliquota   IR    
+    Pessoa          1980.0     0.075      148.5 
+    
+
+
+```python
 
 ```
